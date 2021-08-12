@@ -18,3 +18,7 @@ Navigate to your local `nvim` config file. You can find it by entering `nvim` an
 
 In case you have Vim and NeoVim installed on the same machine, you may experience a situation when NeoVim uses .vimrc from Vim.
 To resolve this, you may remove `%appdata%\nvim-data` directory and remove all the `init.vim` files that you know about. Create a new `init.vim` then and pray it works :)
+
+### Can't open file in already opened NeoVim
+
+Functionality unavailable on Windows... :/ What a mess...
