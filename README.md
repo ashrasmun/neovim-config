@@ -5,7 +5,7 @@
 1. Install Python 2.7 and Python 3.7
 2. Add python paths to %PATH%. To check if the python is in the path, please use :echo $PATH
 3. Copy executables and rename them to python2.7.exe and python3.7.exe
-4. Install 'pynvim' package via pip (example: `py -2.7 -m pip install --user --upgrade pynvim`)
+4. Install `pynvim` package via pip (example: `py -2.7 -m pip install --user --upgrade pynvim`)
 5. Copy `local_init.vim` file into a proper location suggested by `:checkhealth` and rename it to `init.vim`.
 
 ## After you clone the repo...
