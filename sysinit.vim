@@ -1,14 +1,10 @@
 " This is an example of how _vimrc file should look on a Windows machine
 " to make sure that one, common, configuration is kept under version
 " control, is used.
-" Source the .vimrc from mcass repo
+" Source the init.vim from neovim-config repo
 
 " Local vimrc file
-let g:VIM_RC="h:\\dev\\projects\\mcass\\bank\\home\\.vimrc"
-
-" TEMPORARY
-" Location of gvimfullscreen dll
-let g:VIM_GVIMFULLSCREEN_DLL="h:\\dev\\projects\\gvimfullscreen_win32\\gvimfullscreen.dll"
+let g:VIM_RC="h:\\dev\\neovim-config\\init.vim"
 
 try
     exec "source " . g:VIM_RC
