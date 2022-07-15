@@ -2,11 +2,9 @@
 
 ## NeoVim setup
 
-1. Install Python 2.7 and Python 3.7
-2. Add python paths to %PATH%. To check if the python is in the path, please use :echo $PATH
-3. Copy executables and rename them to python2.7.exe and python3.7.exe
-4. Install `pynvim` package via pip (example: `py -2.7 -m pip install --user --upgrade pynvim`)
-5. Copy `local_init.vim` file into a proper location suggested by `:checkhealth` and rename it to `init.vim`.
+1. Clone this repo into proper directory. For example, assuming that you are for Windows that would be
+`git clone https://github.com/ashrasmun/neovim-config.git %localappdata%\nvim`. That way you will have your configuration under version control at all times.
+2. Use :checkhealth to address any issues related to python and nvim itself.
 
 ## After you clone the repo...
 
@@ -21,4 +19,4 @@ To resolve this, you may remove `%appdata%\nvim-data` directory and remove all t
 
 ### Can't open file in already opened NeoVim
 
-Functionality unavailable on Windows... :/ What a mess...
+Functionality unavailable on Windows... :/ But we will take care of it sooner or later :)
