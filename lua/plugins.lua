@@ -1,3 +1,5 @@
+-- NOTE: It's important to run sync before using any plugin, or they may not work (happened with nvim-surround)
+
 -- Thanks to:
 -- https://github.com/LunarVim/Neovim-from-scratch/blob/master/lua/user/plugins.lua
 
