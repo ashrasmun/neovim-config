@@ -1,6 +1,6 @@
---require 'mappings'
---require 'plugins'
---require 'tools'
+require 'mappings'
+require 'plugins'
+require 'tools'
 
 local api = vim.api
 
