@@ -31,3 +31,5 @@ vim.opt.backspace = 'indent,eol,start'
 
 vim.cmd([[ colorscheme jellybeans ]])
 
+-- Enable mouse
+vim.opt.mouse = 'a'
