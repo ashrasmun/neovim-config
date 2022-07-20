@@ -1,5 +1,6 @@
 require 'mappings'
 require 'plugins'
+require 'nerdtree'
 require 'completion'
 require 'tools'
 
@@ -29,3 +30,4 @@ vim.opt.list = true
 vim.opt.backspace = 'indent,eol,start'
 
 vim.cmd([[ colorscheme jellybeans ]])
+

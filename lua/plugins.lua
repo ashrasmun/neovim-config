@@ -60,8 +60,6 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
-
-    -- Snippet engine
     use 'hrsh7th/vim-vsnip'
 
     -- To enable more of the features of rust-analyzer, such as inlay hints and more!
@@ -74,5 +72,8 @@ return require('packer').startup(function()
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+
+    use 'easymotion/vim-easymotion'
+    use 'scrooloose/nerdtree'
 end)
 
