@@ -49,26 +49,30 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'tree-sitter/tree-sitter-rust'
 
-    -- Collection of common configurations for the Nvim LSP client
     use 'neovim/nvim-lspconfig'
-
-    -- Extentions to built-in LSP, for example, providing type inlay hints
     use 'nvim-lua/lsp_extensions.nvim'
+    use 'onsails/lspkind.nvim'
 
     -- Autocompletion framework
     use 'hrsh7th/nvim-cmp'
-    -- cmp LSP completion
     use 'hrsh7th/cmp-nvim-lsp'
-    -- cmp Snippet completion
+    use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-vsnip'
-    -- cmp Path completion
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
-    -- See hrsh7th other plugins for more great completion sources!
 
     -- Snippet engine
     use 'hrsh7th/vim-vsnip'
 
+    -- To enable more of the features of rust-analyzer, such as inlay hints and more!
+    use 'simrat39/rust-tools.nvim'
+
     -- My favorite colorscheme :)
     use 'nanotech/jellybeans.vim'
+
+    -- Fuzzy finder
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
 end)
+

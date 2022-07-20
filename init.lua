@@ -1,5 +1,6 @@
 require 'mappings'
 require 'plugins'
+require 'completion'
 require 'tools'
 
 local api = vim.api
