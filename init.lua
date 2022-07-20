@@ -24,5 +24,7 @@ vim.opt.tabstop = 4
 vim.opt.listchars = 'tab:>-,trail:-,nbsp:_'
 vim.opt.list = true
 
--- Fix backspace behavious (probably not needed in neovim, but adding it just in case)
+-- Fix backspace behaviour (probably not needed in neovim, but adding it just in case)
 vim.opt.backspace = 'indent,eol,start'
+
+vim.cmd([[ colorscheme jellybeans ]])
