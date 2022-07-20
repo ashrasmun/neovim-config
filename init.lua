@@ -29,7 +29,7 @@ vim.opt.list = true
 -- Fix backspace behaviour (probably not needed in neovim, but adding it just in case)
 vim.opt.backspace = 'indent,eol,start'
 
-vim.cmd([[ colorscheme jellybeans ]])
+vim.cmd([[ colorscheme jellybeans-nvim ]])
 
 -- Enable mouse
 vim.opt.mouse = 'a'

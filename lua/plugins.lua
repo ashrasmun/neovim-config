@@ -66,7 +66,8 @@ return require('packer').startup(function()
     use 'simrat39/rust-tools.nvim'
 
     -- My favorite colorscheme :)
-    use 'nanotech/jellybeans.vim'
+    use 'rktjmp/lush.nvim'
+    use 'metalelf0/jellybeans-nvim'
 
     -- Fuzzy finder
     use 'nvim-lua/popup.nvim'
