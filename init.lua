@@ -7,7 +7,7 @@ require 'tools'
 local api = vim.api
 
 -- command! Scratch lua require'tools'.makeScratch()
---api.nvim_create_user_command('Scratch', "lua require'tools'.makeScratch()", {})
+api.nvim_create_user_command('Scratch', "lua require'tools'.makeScratch()", {})
 
 -- Enable line numbering
 vim.opt.number = true
@@ -33,3 +33,11 @@ vim.cmd([[ colorscheme jellybeans-nvim ]])
 
 -- Enable mouse
 vim.opt.mouse = 'a'
+
+-- If searching in lowercase, ignore casing. Otherwise, check for a specific
+-- string and take font case into consideration
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+
