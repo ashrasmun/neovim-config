@@ -85,5 +85,5 @@ return require('packer').startup(function(use)
     use('scrooloose/nerdtree')
 
     -- Lua code formatter
-    use({'wesleimp/stylua.nvim'})
+    use('wesleimp/stylua.nvim')
 end)
