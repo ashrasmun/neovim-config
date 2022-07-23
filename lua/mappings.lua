@@ -41,4 +41,7 @@ M.map("n", "<Leader>/", ":nohl<CR>")
 -- Fix Shift-Insert
 M.map("i", "<S-Insert>", "<C-R>+", {silent = true})
 
+-- Telescope
+M.map("n", "<Leader>t", ":Telescope<CR>")
+
 return M
