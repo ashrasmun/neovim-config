@@ -1,13 +1,13 @@
 -- Remember to :checkhealth in order to repair stuff that needs to be addressed
 -- on each machine manually. For extended explanation please read README.md
 
-require 'mappings'
-require 'plugins'
-require 'lsp' -- needs to be after 'plugins'
-require 'treesitter' -- needs to be after 'plugins'
-require 'nerdtree'
-require 'completion'
-require 'tools'
+require('mappings')
+require('plugins')
+require('lsp') -- needs to be after 'plugins'
+require('treesitter') -- needs to be after 'plugins'
+require('nerdtree')
+require('completion')
+require('tools')
 
 local api = vim.api
 

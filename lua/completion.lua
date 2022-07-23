@@ -11,7 +11,7 @@ vim.cmd([[set shortmess+=c]])
 -- nvim-cmp setup
 vim.cmd([[set completeopt=menu,menuone,noselect]])
 
-local ok, lspkind = pcall(require, "lspkind")
+local ok, lspkind = pcall(require, 'lspkind')
 if not ok then
     print('Cannot load lspkind')
     vim.cmd([[:messages]])
@@ -20,52 +20,51 @@ end
 
 lspkind.init()
 
-local cmp = require'cmp'
+local cmp = require('cmp')
 cmp.setup({
-  -- Enable LSP snippets
-  snippet = {
-    expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = {
-      ['<C-p>'] = cmp.mapping.select_prev_item(),
-      ['<C-n>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<C-y>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
-    })
-  },
-
-  -- Installed sources
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
-    { name = 'vsnip' },
-    { name = 'path' },
-    { name = 'buffer', keyword_length = 5 },
-  },
-
-  formatting = {
-    format = lspkind.cmp_format {
-      with_text = true,
-      menu = {
-        buffer = "[buf]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[api]",
-        path = "[path]",
-        luasnip = "[snip]", -- TODO: Install luasnip... or vsnip?
-      },
+    -- Enable LSP snippets
+    snippet = {
+        expand = function(args)
+            vim.fn['vsnip#anonymous'](args.body)
+        end,
     },
-  },
+    mapping = {
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_prev_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.close(),
+        ['<C-y>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+        }),
+    },
+
+    -- Installed sources
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
+        { name = 'vsnip' },
+        { name = 'path' },
+        { name = 'buffer', keyword_length = 5 },
+    },
+
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = true,
+            menu = {
+                buffer = '[buf]',
+                nvim_lsp = '[LSP]',
+                nvim_lua = '[api]',
+                path = '[path]',
+                luasnip = '[snip]', -- TODO: Install luasnip... or vsnip?
+            },
+        }),
+    },
 
     experimental = {
         native_menu = false,
         ghost_text = true,
-    }
+    },
 })
-

@@ -4,33 +4,33 @@ if not ok then
 end
 
 local on_attach = function(client)
-    require'completion'.on_attach(client)
+    require('completion').on_attach(client)
 end
 
 --== LUA ==--
 
-configs.sumneko_lua.setup {
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
+configs.sumneko_lua.setup({
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file('', true),
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+                enable = false,
+            },
+        },
     },
-  },
-}
+})
 
 --== POWERSHELL ==--
 
@@ -40,11 +40,11 @@ configs.sumneko_lua.setup {
 -- 2. Point 'bundle_path' to location where the unpacked files live.
 -- Unfortunatelly it is not being look for in %PATH% :(
 
-configs.powershell_es.setup{
+configs.powershell_es.setup({
     -- bundle_path = vim.env.PATH,
     bundle_path = 'h:\\tools\\ps_lsp',
-    shell = 'powershell.exe'
-}
+    shell = 'powershell.exe',
+})
 
 --== PYTHON ==--
 
@@ -52,9 +52,9 @@ configs.powershell_es.setup{
 -- 1. install pyright:
 -- pip install pyright
 
-configs.pyright.setup{
-    single_file_support = true
-}
+configs.pyright.setup({
+    single_file_support = true,
+})
 
 --== RUST ==--
 
@@ -66,14 +66,14 @@ configs.pyright.setup{
 -- 3. Add the location of .exe to %PATH%
 
 configs.rust_analyzer.setup({
-    on_attach=on_attach,
+    on_attach = on_attach,
     settings = {
-        ["rust-analyzer"] = {
+        ['rust-analyzer'] = {
             imports = {
                 granularity = {
-                    group = "module",
+                    group = 'module',
                 },
-                prefix = "self",
+                prefix = 'self',
             },
             cargo = {
                 buildScripts = {
@@ -81,9 +81,8 @@ configs.rust_analyzer.setup({
                 },
             },
             procMacro = {
-                enable = true
+                enable = true,
             },
-        }
-    }
+        },
+    },
 })
-

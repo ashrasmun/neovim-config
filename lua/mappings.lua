@@ -15,33 +15,33 @@ local M = {}
 -- Thanks to:
 -- https://blog.devgenius.io/create-custom-keymaps-in-neovim-with-lua-d1167de0f2c2
 function M.map(mode, lhs, rhs, opts)
-    local options = {noremap = true}
+    local options = { noremap = true }
     if opts then
-        options = vim.tbl_extend("force", options, opts)
+        options = vim.tbl_extend('force', options, opts)
     end
     api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Leader
-vim.g.mapleader = " "
-M.map("", " ", "<Nop>")
+vim.g.mapleader = ' '
+M.map('', ' ', '<Nop>')
 
 -- Source
-M.map("n", "<Leader>s", ":wa<CR>:exe \"source %\"<CR>", {silent = true})
+M.map('n', '<Leader>s', ':wa<CR>:exe "source %"<CR>', { silent = true })
 
 -- Movement between panes
-M.map("", "<C-h>", "<C-w>h")
-M.map("", "<C-j>", "<C-w>j")
-M.map("", "<C-k>", "<C-w>k")
-M.map("", "<C-l>", "<C-w>l")
+M.map('', '<C-h>', '<C-w>h')
+M.map('', '<C-j>', '<C-w>j')
+M.map('', '<C-k>', '<C-w>k')
+M.map('', '<C-l>', '<C-w>l')
 
 -- Remove highlight
-M.map("n", "<Leader>/", ":nohl<CR>")
+M.map('n', '<Leader>/', ':nohl<CR>')
 
 -- Fix Shift-Insert
-M.map("i", "<S-Insert>", "<C-R>+", {silent = true})
+M.map('i', '<S-Insert>', '<C-R>+', { silent = true })
 
 -- Telescope
-M.map("n", "<Leader>t", ":Telescope<CR>")
+M.map('n', '<Leader>t', ':Telescope<CR>')
 
 return M
