@@ -85,8 +85,5 @@ return require('packer').startup(function(use)
     use('scrooloose/nerdtree')
 
     -- Lua code formatter
-    use({
-        'ckipp01/stylua-nvim',
-        run = 'cargo install stylua',
-    })
+    use({'wesleimp/stylua.nvim'})
 end)

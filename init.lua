@@ -56,3 +56,5 @@ endfunction
 
 :noremap <silent> <Leader>fw :call <SID>TrimTrailingWhitespaces()<CR>
 ]])
+
+vim.cmd([[:nnoremap <silent> <Leader>fe <cmd>lua require('stylua').format()<CR>]])
