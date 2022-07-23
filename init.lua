@@ -1,7 +1,11 @@
+-- Remember to :checkhealth in order to repair stuff that needs to be addressed
+-- on each machine manually. For extended explanation please read README.md
+
 require 'mappings'
 require 'plugins'
-require 'rust' -- needs to be after plugins
-require 'powershell' -- needs to be after plugins
+require 'rust'       -- needs to be after 'plugins'
+require 'powershell' -- needs to be after 'plugins'
+require 'python'     -- needs to be after 'plugins'
 require 'nerdtree'
 require 'completion'
 require 'tools'

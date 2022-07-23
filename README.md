@@ -6,9 +6,27 @@
 `git clone https://github.com/ashrasmun/neovim-config.git %localappdata%\nvim`. That way you will have your configuration under version control at all times.
 2. Use :checkhealth to address any issues related to python and nvim itself.
 
-## After you clone the repo...
+## Some tips related to setting up local config
 
-Navigate to your local `nvim` config file. You can find it by entering `nvim` and using the `:version` command to check the path. Example `sysinit.nvim` file is available in the repo with minimal content that lets nvim to redirect to config file under version control.
+### tree-sitter
+
+Download the archive from https://github.com/tree-sitter/tree-sitter/releases and unpack it. Don't bother with `npm`.
+After that, add the path to this tool to %PATH%.
+
+Install `LLVM`, `node` and `git`. You can also use `zig` instead of `LLVM`.
+
+Finally, run this command in the NeoVim:
+`:TSUpdate rust python toml lua zig c cpp perl`
+
+### rust-analyzer
+
+Download the archive from https://github.com/rust-lang/rust-analyzer/releases, unpack it and rename the unpacked file to `rust-analyzer.exe`.
+After that, add the path to this tool to %PATH%.
+
+### python
+
+Make a copy of executable and call it `python3`, because noone relies on `py -3` unfortunatelly.
+Disable `python3` alias from Windows: https://stackoverflow.com/questions/58754860/cmd-opens-windows-store-when-i-type-python (aka "Zarządzaj aliasami wykonywania aplikacji").
 
 ## Trouleshooting
 
