@@ -7,9 +7,9 @@ local fn = vim.fn
 
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim" if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({ 
+    PACKER_BOOTSTRAP = fn.system({
         "git", "clone", "--depth", "1",
-        "https://github.com/wbthomason/packer.nvim", install_path, 
+        "https://github.com/wbthomason/packer.nvim", install_path,
     })
     print("Installing packer close and reopen Neovim...")
     vim.cmd([[packadd packer.nvim]])
@@ -24,12 +24,12 @@ vim.cmd([[
 ]])
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, _ = pcall(require, "packer")
     if not status_ok then
     return
 end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -46,7 +46,7 @@ return require('packer').startup(function()
     -- treesitter
     -- Please remember to check:
     -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
-    use { 
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = ":TSUpdate rust python toml lua zig c cpp perl"
     }
@@ -78,5 +78,11 @@ return require('packer').startup(function()
 
     use 'easymotion/vim-easymotion'
     use 'scrooloose/nerdtree'
+
+    -- Lua code formatter
+    use {
+        'ckipp01/stylua-nvim',
+        run = 'cargo install stylua'
+    }
 end)
 

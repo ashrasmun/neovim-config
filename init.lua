@@ -3,9 +3,7 @@
 
 require 'mappings'
 require 'plugins'
-require 'rust'       -- needs to be after 'plugins'
-require 'powershell' -- needs to be after 'plugins'
-require 'python'     -- needs to be after 'plugins'
+require 'lsp' -- needs to be after 'plugins'
 require 'treesitter' -- needs to be after 'plugins'
 require 'nerdtree'
 require 'completion'
@@ -48,3 +46,13 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
+-- Trim whole file from trailing whitespaces
+vim.cmd([[
+function! s:TrimTrailingWhitespaces() range
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+
+:noremap <silent> <Leader>fw :call <SID>TrimTrailingWhitespaces()<CR>
+]])

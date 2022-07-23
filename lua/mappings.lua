@@ -4,22 +4,22 @@ local M = {}
 -- Parameters
 -- ----------
 -- mode
--- 	as in vim modes like normal/insert mode
+--  as in vim modes like normal/insert mode
 -- lhs
--- 	the custom keybings you need
+--  the custom keybings you need
 -- rhs
--- 	the commands or existing keybinds to customise
+--  the commands or existing keybinds to customise
 -- opts
--- 	additional options like <silent>/<noremap>, see :h map-arguments for
--- 	more info on it
--- Thanks to: 
+--  additional options like <silent>/<noremap>, see :h map-arguments for
+--  more info on it
+-- Thanks to:
 -- https://blog.devgenius.io/create-custom-keymaps-in-neovim-with-lua-d1167de0f2c2
 function M.map(mode, lhs, rhs, opts)
-	local options = {noremap = true}
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	api.nvim_set_keymap(mode, lhs, rhs, options)
+    local options = {noremap = true}
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Leader

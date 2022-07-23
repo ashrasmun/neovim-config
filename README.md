@@ -28,6 +28,12 @@ After that, add the path to this tool to %PATH%.
 Make a copy of executable and call it `python3`, because noone relies on `py -3` unfortunatelly.
 Disable `python3` alias from Windows: https://stackoverflow.com/questions/58754860/cmd-opens-windows-store-when-i-type-python (aka "Zarządzaj aliasami wykonywania aplikacji").
 
+### lua
+
+After installation, path to `bin` directory needs to be set, example:
+`set path`
+`Path=...;h:\tools\lua_lsp\bin\;`
+
 ## Trouleshooting
 
 ### Wrong resource file used
