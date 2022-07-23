@@ -57,4 +57,8 @@ endfunction
 :noremap <silent> <Leader>fw :call <SID>TrimTrailingWhitespaces()<CR>
 ]])
 
+-- TODO: Make it aware of what type of file is being editted at the moment and
+-- add old formatting commands.
+-- command! FormatXML :%!python -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+-- command! FormatJSON :%!python -m json.tool
 vim.cmd([[:nnoremap <silent> <Leader>fe <cmd>lua require('stylua').format()<CR>]])
