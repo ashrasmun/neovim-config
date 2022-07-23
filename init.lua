@@ -1,5 +1,7 @@
 require 'mappings'
 require 'plugins'
+require 'rust' -- needs to be after plugins
+require 'powershell' -- needs to be after plugins
 require 'nerdtree'
 require 'completion'
 require 'tools'

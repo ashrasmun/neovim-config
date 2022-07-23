@@ -1,9 +1,19 @@
+-- To setup the server, you need to do a bit of additional manual work.
+-- 1. download the PowerShellEditorServices:
+-- https://github.com/PowerShell/PowerShellEditorServices/releases
+-- 2. Point 'bundle_path' to location where the unpacked files live.
+-- Unfortunatelly it is not being look for in %PATH% :(
 
-local M = {}
+local ps_lsp = require'lspconfig'
 
-function M.test()
-	print('test')
-	-- local pipe = io.open('cmd')
+local on_attach = function(client)
+    require'completion'.on_attach(client)
 end
 
-return M
+ps_lsp.powershell_es.setup{
+    -- bundle_path = vim.env.PATH,
+    bundle_path = 'h:\\tools\\ps_lsp',
+    shell = 'powershell.exe'
+}
+
+
