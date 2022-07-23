@@ -15,7 +15,7 @@ After that, add the path to this tool to %PATH%.
 
 Install `LLVM`, `node` and `git`. You can also use `zig` instead of `LLVM`.
 
-Finally, run this command in the NeoVim:
+Just in case the update won't be performed, run this command in NeoVim:
 `:TSUpdate rust python toml lua zig c cpp perl`
 
 ### rust-analyzer

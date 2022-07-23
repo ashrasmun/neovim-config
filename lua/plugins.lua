@@ -46,8 +46,10 @@ return require('packer').startup(function()
     -- treesitter
     -- Please remember to check:
     -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'tree-sitter/tree-sitter-rust'
+    use { 
+        'nvim-treesitter/nvim-treesitter',
+        run = ":TSUpdate rust python toml lua zig c cpp perl"
+    }
 
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/lsp_extensions.nvim'
