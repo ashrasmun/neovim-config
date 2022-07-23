@@ -42,6 +42,9 @@ M.map('n', '<Leader>/', ':nohl<CR>')
 M.map('i', '<S-Insert>', '<C-R>+', { silent = true })
 
 -- Telescope
-M.map('n', '<Leader>t', ':Telescope<CR>')
+M.map('n', '<Leader>tf', "<cmd>lua require('telescope.builtin').find_files()<CR>")
+M.map('n', '<Leader>tg', "<cmd>lua require('telescope.builtin').live_grep({grep_open_files = true})<CR>")
+M.map('n', '<Leader>tb', "<cmd>lua require('telescope.builtin').buffers()<CR>")
+M.map('n', '<Leader>th', "<cmd>lua require('telescope.builtin').help_tags()<CR>")
 
 return M
