@@ -3,9 +3,10 @@ if not ok then
     return
 end
 
-local on_attach = function(client)
-    require('completion').on_attach(client)
-end
+-- TODO: investigate why doesn't this work
+-- local on_attach = function(client)
+--     require('completion').on_attach(client)
+-- end
 
 --== LUA ==--
 
@@ -66,7 +67,7 @@ configs.pyright.setup({
 -- 3. Add the location of .exe to %PATH%
 
 configs.rust_analyzer.setup({
-    on_attach = on_attach,
+    -- on_attach = on_attach,
     settings = {
         ['rust-analyzer'] = {
             imports = {
