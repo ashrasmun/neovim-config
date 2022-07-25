@@ -42,8 +42,7 @@ configs.sumneko_lua.setup({
 -- Unfortunatelly it is not being look for in %PATH% :(
 
 configs.powershell_es.setup({
-    -- bundle_path = vim.env.PATH,
-    bundle_path = 'h:\\tools\\ps_lsp',
+    bundle_path = vim.env.NVIM_PS_LSP,
     shell = 'powershell.exe',
 })
 
