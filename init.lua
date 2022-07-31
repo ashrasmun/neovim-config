@@ -9,6 +9,10 @@ require('nerdtree')
 require('completion')
 require('tools')
 
+if vim.g.neovide then
+    require('neovide')
+end
+
 local api = vim.api
 
 -- command! Scratch lua require'tools'.makeScratch()
