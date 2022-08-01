@@ -85,5 +85,8 @@ return require('packer').startup(function(use)
     use('scrooloose/nerdtree')
 
     -- Lua code formatter
+    -- https://github.com/JohnnyMorganz/StyLua
     use('wesleimp/stylua.nvim')
+
+    use('equalsraf/neovim-gui-shim')
 end)
