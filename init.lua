@@ -8,6 +8,7 @@ require('treesitter') -- needs to be after 'plugins'
 require('nerdtree')
 require('completion')
 require('tools')
+require('ginit')
 
 if vim.g.neovide then
     require('neovide')
