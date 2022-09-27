@@ -8,6 +8,12 @@ end
 --     require('completion').on_attach(client)
 -- end
 
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--     vim.lsp.diagnostic.on_publish_diagnostics, {
+--         signs = false,
+--     }
+-- )
+
 --== LUA ==--
 
 configs.sumneko_lua.setup({

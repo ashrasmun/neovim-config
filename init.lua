@@ -67,3 +67,8 @@ endfunction
 -- command! FormatXML :%!python -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
 -- command! FormatJSON :%!python -m json.tool
 vim.cmd([[:nnoremap <silent> <Leader>fe <cmd>lua require('stylua').format()<CR>]])
+
+-- Workaround because Lsp is intrusive out-of-the-box. Ideally I would like to
+-- have these signs disabled, but I don't know how to.
+-- Link for future: https://github.com/neovim/nvim-lspconfig/issues/195
+vim.cmd([[set signcolumn=yes]])
