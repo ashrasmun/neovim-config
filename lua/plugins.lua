@@ -72,6 +72,10 @@ return require('packer').startup(function(use)
     -- To enable more of the features of rust-analyzer, such as inlay hints and more!
     use('simrat39/rust-tools.nvim')
 
+    -- Override native rust plugin with newest one
+    -- https://danmc.net/posts/nvim-rust-1/
+    use('rust-lang/rust.vim')
+
     -- My favorite colorscheme :)
     use('rktjmp/lush.nvim')
     use('metalelf0/jellybeans-nvim')
