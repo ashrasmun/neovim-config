@@ -16,7 +16,7 @@ end
 
 --== LUA ==--
 
-configs.sumneko_lua.setup({
+configs.lua_ls.setup({
     settings = {
         Lua = {
             runtime = {

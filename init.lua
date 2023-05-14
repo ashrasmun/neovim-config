@@ -10,9 +10,9 @@ require('completion')
 require('tools')
 require('ginit')
 
-if vim.g.neovide then
-    require('neovide')
-end
+-- if vim.g.neovide then
+--     require('neovide')
+-- end
 
 local api = vim.api
 
@@ -39,6 +39,12 @@ vim.opt.list = true
 -- Fix backspace behaviour (probably not needed in neovim, but adding it just in case)
 vim.opt.backspace = 'indent,eol,start'
 
+-- NOTE: It is possible, that treesitter can get confused on this line (first
+-- one on which you are going to notice it btw). The reason is most probably
+-- related to the fact that treesitter doesn't know which parser to use. You
+-- just need to rename the one 'nvim' uses natively. For better context please
+-- check:
+-- https://www.reddit.com/r/neovim/comments/z9008g/nvimtreesitter_invalid_node_type_at_position_5/
 vim.cmd([[ colorscheme jellybeans-nvim ]])
 
 -- Enable mouse
@@ -50,6 +56,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
+
+vim.opt.textwidth = 80
 
 -- Trim whole file from trailing whitespaces
 vim.cmd([[
