@@ -1,7 +1,3 @@
--- Invoke nerd tree every time vim is opened
--- and focus on buffer with file
-vim.cmd([[autocmd VimEnter * NERDTree | wincmd w]])
-
 -- Close vim when NERDTree buffer is the only one present
 -- In case of emergency, visit:
 -- https://stackoverflow.com/questions/2066590/automatically-quit-vim-if-nerdtree-is-last-and-only-buffer

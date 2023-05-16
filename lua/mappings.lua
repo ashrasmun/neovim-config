@@ -28,6 +28,7 @@ M.map('', ' ', '<Nop>')
 
 -- Source
 M.map('n', '<Leader>s', ':wa<CR>:exe "source %"<CR>', { silent = true })
+M.map('n', '<Leader>v', ':e $MYVIMRC<CR>', { silent = true })
 
 -- Movement between panes
 M.map('', '<C-h>', '<C-w>h')
