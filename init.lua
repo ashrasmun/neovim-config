@@ -77,4 +77,7 @@ vim.cmd([[:nnoremap <silent> <Leader>fe <cmd>lua require('stylua').format()<CR>]
 -- Link for future: https://github.com/neovim/nvim-lspconfig/issues/195
 vim.opt.signcolumn = 'number'
 
-vim.cmd([[let g:rustfmt_autosave = 1]])
+
+-- vim.g.rustfmt_command = "C:\\Users\\ashra\\.cargo\\bin\\rustfmt.exe"
+vim.g.rustfmt_autosave = 1
+

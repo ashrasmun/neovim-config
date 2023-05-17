@@ -38,18 +38,16 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
 
-    -- TEMP(ashra, 2023-05-17): This keeps printing an annoying error about
-    -- refering to 'cmd' as an array...
-    -- -- nvim-surround
-    -- use({
-    --     'kylechui/nvim-surround',
-    --     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    --     config = function()
-    --         require('nvim-surround').setup({
-    --             -- Configuration here, or leave empty to use defaults
-    --         })
-    --     end
-    -- })
+    -- nvim-surround
+    use({
+        'kylechui/nvim-surround',
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require('nvim-surround').setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
 
     -- treesitter
     -- Please remember to check:
