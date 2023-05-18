@@ -5,7 +5,21 @@
 
 if A_Args.Length() != 1
 {
-    MsgBox % "This script requires a filename as argument"
+    text := "This script requires a filename as argument. Provided: "
+
+    if A_Args.Length() == 0
+    {
+        text := text . "nothing."
+    }
+    else
+    {
+        for n, param in A_Args
+        {
+            text := text . "`n" . n . ". " . param
+        }
+    }
+
+    MsgBox % text
     ExitApp
 }
 
