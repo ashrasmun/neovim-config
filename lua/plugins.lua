@@ -62,4 +62,12 @@ require("lazy").setup({
 
     'easymotion/vim-easymotion',
     'scrooloose/nerdtree',
+
+        -- Fuzzy finder
+    'nvim-lua/popup.nvim',
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+
+    'easymotion/vim-easymotion',
+    'scrooloose/nerdtree'
 })
