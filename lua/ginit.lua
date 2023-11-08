@@ -1,16 +1,4 @@
 vim.cmd([[
-function! QtToggleFullscreen() abort
-    if g:GuiWindowFullScreen == v:true
-        call GuiWindowFullScreen(0)
-    else
-        call GuiWindowFullScreen(1)
-    endif
-endfunction
-
-nnoremap <F11> :call QtToggleFullscreen()<CR>
-]])
-
-vim.cmd([[
     " Disable GUI Tabline
     if exists(':GuiTabline')
         GuiTabline 0
@@ -24,22 +12,30 @@ vim.cmd([[
 
 --== FONT SIZE ==--
 
-vim.g.gui_font_default_size = 12
+vim.g.gui_font_default_size = 16
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = "Consolas"
+-- vim.g.gui_font_face = "ProFontWindows"
 
 RefreshGuiFont = function()
-  vim.opt.guifont = string.format("%s:h%s", vim.g.gui_font_face, vim.g.gui_font_size)
+    vim.opt.guifont = string.format("%s:h%s", vim.g.gui_font_face, vim.g.gui_font_size)
 end
 
 ResizeGuiFont = function(delta)
-  vim.g.gui_font_size = vim.g.gui_font_size + delta
-  RefreshGuiFont()
+    if delta == -1 then
+        if vim.g.gui_font_size > 10 then
+            vim.g.gui_font_size = vim.g.gui_font_size + delta
+        end
+    else
+        vim.g.gui_font_size = vim.g.gui_font_size + delta
+    end
+
+    RefreshGuiFont()
 end
 
 ResetGuiFont = function()
-  vim.g.gui_font_size = vim.g.gui_font_default_size
-  RefreshGuiFont()
+    vim.g.gui_font_size = vim.g.gui_font_default_size
+    RefreshGuiFont()
 end
 
 -- Call function on startup to set default value
@@ -54,8 +50,8 @@ vim.cmd([[
     nnoremap <silent> <F10> :lua ResizeGuiFont(-1)<CR>
     nnoremap <silent> <F12> :lua ResetGuiFont()<CR>
 
-    noremap <C-ScrollWheelUp> :lua ResizeGuiFont(1)<CR>
-    noremap <C-ScrollWheelDown> :lua ResizeGuiFont(-1)<CR>
-    inoremap <C-ScrollWheelUp> <Esc>:lua ResizeGuiFont(1)<CR>a
-    inoremap <C-ScrollWheelDown> <Esc>:lua ResizeGuiFont(-1)<CR>a
+    noremap <silent> <C-ScrollWheelUp> :lua ResizeGuiFont(1)<CR>
+    noremap <silent> <C-ScrollWheelDown> :lua ResizeGuiFont(-1)<CR>
+    inoremap <silent> <C-ScrollWheelUp> <Esc>:lua ResizeGuiFont(1)<CR>a
+    inoremap <silent> <C-ScrollWheelDown> <Esc>:lua ResizeGuiFont(-1)<CR>a
 ]])

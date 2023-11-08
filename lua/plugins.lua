@@ -60,6 +60,8 @@ require("lazy").setup({
     'rktjmp/lush.nvim',
     'metalelf0/jellybeans-nvim',
 
+    'whatyouhide/vim-gotham',
+
     'easymotion/vim-easymotion',
     'scrooloose/nerdtree',
 

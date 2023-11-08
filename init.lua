@@ -42,6 +42,7 @@ vim.opt.backspace = 'indent,eol,start'
 -- check:
 -- https://www.reddit.com/r/neovim/comments/z9008g/nvimtreesitter_invalid_node_type_at_position_5/
 vim.cmd([[ colorscheme jellybeans-nvim ]])
+-- vim.cmd([[ colorscheme gotham ]])
 
 -- Enable mouse
 vim.opt.mouse = 'a'

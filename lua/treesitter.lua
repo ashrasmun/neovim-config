@@ -13,6 +13,6 @@ configs.setup({
     highlight = {
         enable = true,
         -- Can be demanding for the editor, but... the colors!
-        additional_vim_regex_highlighting = true,
+        -- additional_vim_regex_highlighting = true,
     },
 })
