@@ -53,4 +53,9 @@ vim.cmd([[
     nnoremap <silent> <F9>  :lua ResizeGuiFont(1)<CR>
     nnoremap <silent> <F10> :lua ResizeGuiFont(-1)<CR>
     nnoremap <silent> <F12> :lua ResetGuiFont()<CR>
+
+    noremap <C-ScrollWheelUp> :lua ResizeGuiFont(1)<CR>
+    noremap <C-ScrollWheelDown> :lua ResizeGuiFont(-1)<CR>
+    inoremap <C-ScrollWheelUp> <Esc>:lua ResizeGuiFont(1)<CR>a
+    inoremap <C-ScrollWheelDown> <Esc>:lua ResizeGuiFont(-1)<CR>a
 ]])

@@ -81,3 +81,7 @@ vim.opt.signcolumn = 'number'
 -- vim.g.rustfmt_command = "C:\\Users\\ashra\\.cargo\\bin\\rustfmt.exe"
 vim.g.rustfmt_autosave = 1
 
+-- Automatically change working directory when accessing a file. This improves
+-- the usability of Telescope, as it enabled grep from directory in which the
+-- currently edited file lives.
+vim.cmd([[:set autochdir]])
