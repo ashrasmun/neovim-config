@@ -11,14 +11,18 @@ vim.cmd([[set shortmess+=c]])
 -- nvim-cmp setup
 vim.cmd([[set completeopt=menu,menuone,noselect]])
 
-local ok, lspkind = pcall(require, 'lspkind')
-if not ok then
+local lspkind_ok, lspkind = pcall(require, 'lspkind')
+if not lspkind_ok then
+    return
+end
+
+local cmp_ok, cmp = pcall(require, 'cmp')
+if not cmp_ok then
     return
 end
 
 lspkind.init()
 
-local cmp = require('cmp')
 cmp.setup({
     -- Enable LSP snippets
     snippet = {
