@@ -7,7 +7,6 @@ require('lsp') -- needs to be after 'plugins'
 require('treesitter') -- needs to be after 'plugins'
 require('nerdtree')
 require('completion')
-require('tools')
 require('ginit')
 
 local api = vim.api
