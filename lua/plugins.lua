@@ -61,11 +61,19 @@ require("lazy").setup({
     'easymotion/vim-easymotion',
     'scrooloose/nerdtree',
 
-        -- Fuzzy finder
+    -- Fuzzy finder
     'nvim-lua/popup.nvim',
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
 
+    {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    },
+
+    -- File navigation
     'easymotion/vim-easymotion',
+
+    -- File explorer
     'scrooloose/nerdtree'
 })
