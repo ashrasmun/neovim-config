@@ -37,7 +37,7 @@ M.map('', '<C-k>', '<C-w>k')
 M.map('', '<C-l>', '<C-w>l')
 
 -- Remove highlight
-M.map('n', '<Leader>/', ':nohl<CR>')
+-- M.map('n', '<Leader>/', ':nohl<CR>')
 
 -- Fix Shift-Insert
 M.map('i', '<S-Insert>', '<C-R>+', { silent = true })
