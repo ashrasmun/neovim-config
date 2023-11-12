@@ -5,7 +5,7 @@ require('mappings')
 require('plugins')
 require('lsp') -- needs to be after 'plugins'
 require('treesitter') -- needs to be after 'plugins'
-require('nerdtree')
+require('nvim_tree') -- needs to be after 'plugins'
 require('completion')
 require('ginit')
 
@@ -47,11 +47,12 @@ vim.cmd([[ colorscheme jellybeans-nvim ]])
 vim.opt.mouse = 'a'
 
 -- If searching in lowercase, ignore casing. Otherwise, check for a specific
--- string and take font case into consideration
+-- string and take font case into consideration. Also remove highlight on
+-- search.
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 
 vim.opt.textwidth = 80
 

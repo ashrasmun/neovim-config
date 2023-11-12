@@ -30,6 +30,7 @@ cmp.setup({
             vim.fn['vsnip#anonymous'](args.body)
         end,
     },
+
     mapping = {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),

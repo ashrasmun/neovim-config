@@ -6,9 +6,26 @@ end
 configs.setup({
     -- First five are needed as per documentation
     -- https://github.com/nvim-treesitter/nvim-treesitter#modules
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "cpp", "zig", "perl", "toml", "python", "rust" },
-    sync_install = false, -- Install parsers synchronously (only applied to `ensure_installed`)
-    auto_install = true, -- Automatically install missing parsers when entering buffer
+    ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "cpp",
+        "zig",
+        "perl",
+        "toml",
+        "python",
+        "rust",
+        "markdown"
+    },
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    auto_install = true,
 
     highlight = {
         enable = true,
