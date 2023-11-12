@@ -111,8 +111,8 @@ require('telescope').setup {
     defaults = {
     mappings = {
         i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
+            ['<C-u>'] = false,
+            ['<C-d>'] = false,
         },
     },
     },
@@ -163,8 +163,8 @@ vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { d
 vim.keymap.set('n', '<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
     require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
+        winblend = 10,
+        previewer = false,
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
@@ -384,20 +384,20 @@ cmp.setup {
         },
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
-            cmp.select_next_item()
+                cmp.select_next_item()
             elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
+                luasnip.expand_or_jump()
             else
-            fallback()
+                fallback()
             end
         end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
-            cmp.select_prev_item()
+                cmp.select_prev_item()
             elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
+                luasnip.jump(-1)
             else
-            fallback()
+                fallback()
             end
         end, { 'i', 's' }),
     },
@@ -405,4 +405,11 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
     },
+}
+
+-- [[ Configure Icons ]] --
+require('nvim-web-devicons').set_icon {
+    -- TODO: something for future.
+    -- Color matching jellybeans colorscheme
+    -- color = "#e8e8d4",
 }
