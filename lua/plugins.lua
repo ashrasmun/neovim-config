@@ -405,6 +405,8 @@ cmp.setup {
     },
 }
 
+-- Expect each project to have 'README.md' file in it's root instead of relying
+-- on git.
 local nvim_lsp = require('lspconfig')
 
 nvim_lsp.perlpls.setup {
@@ -414,5 +416,15 @@ nvim_lsp.perlpls.setup {
 
 nvim_lsp.pyright.setup {
     single_file_support = false,
-    root_dir = nvim_lsp.util.root_pattern('README.md')
+    root_dir = nvim_lsp.util.root_pattern('README.md'),
 }
+
+-- Setup diagnostics
+-- Solved with https://stackoverflow.com/a/70760302/2059351 <3
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
