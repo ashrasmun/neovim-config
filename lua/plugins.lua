@@ -60,9 +60,7 @@ require("lazy").setup({
     'easymotion/vim-easymotion',
 
     -- File explorer
-    --'scrooloose/nerdtree',
-    'nvim-tree/nvim-tree.lua',
-    'nvim-tree/nvim-web-devicons',
+    'scrooloose/nerdtree',
 
     -- Fuzzy finder
     'nvim-lua/popup.nvim',
@@ -405,13 +403,6 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
     },
-}
-
--- [[ Configure Icons ]] --
-require('nvim-web-devicons').set_icon {
-    -- TODO: something for future.
-    -- Color matching jellybeans colorscheme
-    -- color = "#e8e8d4",
 }
 
 local nvim_lsp = require('lspconfig')

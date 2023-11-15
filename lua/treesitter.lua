@@ -8,17 +8,18 @@ configs.setup({
     -- https://github.com/nvim-treesitter/nvim-treesitter#modules
     ensure_installed = {
         "c",
+        "cpp",
+        "json",
         "lua",
+        "markdown",
+        "perl",
+        "python",
+        "query",
+        "rust",
+        "toml",
         "vim",
         "vimdoc",
-        "query",
-        "cpp",
         "zig",
-        "perl",
-        "toml",
-        "python",
-        "rust",
-        "markdown"
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
