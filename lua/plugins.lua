@@ -315,11 +315,14 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
     clangd = {},
-    -- gopls = {},
+    -- NOTE(ashra, 2023-11-15): pyright is dumb and I cannot set custom root_dir
+    -- for it... :/
     pyright = {},
-    -- rust_analyzer = {},
-    -- tsserver = {},
-    -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+    -- NOTE(ashra, 2023-11-22): Requires https://github.com/bscan/PerlNavigator/releases
+    -- perlnavigator = {
+    --     -- enableWarnings = true,
+    --     -- perlcriticEnabled = true,
+    -- },
 
     lua_ls = {
         Lua = {
@@ -405,20 +408,6 @@ cmp.setup {
     },
 }
 
--- Expect each project to have 'README.md' file in it's root instead of relying
--- on git.
-local nvim_lsp = require('lspconfig')
-
-nvim_lsp.perlpls.setup {
-    single_file_support = false,
-    root_dir = nvim_lsp.util.root_pattern('README.md')
-}
-
-nvim_lsp.pyright.setup {
-    single_file_support = false,
-    root_dir = nvim_lsp.util.root_pattern('README.md'),
-}
-
 -- Setup diagnostics
 -- Solved with https://stackoverflow.com/a/70760302/2059351 <3
 vim.diagnostic.config({
@@ -428,3 +417,13 @@ vim.diagnostic.config({
 -- Show line diagnostics automatically in hover window
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- TODO(ashra, 2023-11-22): Refactor this in order to have this in mason config
+-- BTW, for some reason mason has problem with the 'root_pattern' function.
+local nvim_lspconfig = require('lspconfig')
+
+nvim_lspconfig.perlnavigator.setup {
+    single_file_support = false,
+    root_dir = nvim_lspconfig.util.root_pattern('README.md')
+}
+
