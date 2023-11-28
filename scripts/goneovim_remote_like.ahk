@@ -51,5 +51,5 @@ if found
 }
 else
 {
-    Run, h:\tools\goneovim\goneovim.lnk "%1%", , Max
+    Run, D:\tools\goneovim\goneovim.exe --fullscreen "%1%", , Max
 }
