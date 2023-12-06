@@ -25,6 +25,9 @@ lspkind.init()
 
 cmp.setup({
     -- Enable LSP snippets
+    -- TODO(ashra, 2023-12-06): Clean up snippet related code, because currently
+    -- there are two places where e.g. mappings are set, and it's really
+    -- confusing.
     snippet = {
         expand = function(args)
             vim.fn['vsnip#anonymous'](args.body)
@@ -38,7 +41,7 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({
+        ['<C-CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
