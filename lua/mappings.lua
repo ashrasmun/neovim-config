@@ -50,4 +50,7 @@ M.map('n', '<Leader>ts', "<cmd>lua require('telescope.builtin').grep_string()<CR
 M.map('n', '<Leader>tb', "<cmd>lua require('telescope.builtin').buffers()<CR>")
 M.map('n', '<Leader>th', "<cmd>lua require('telescope.builtin').help_tags()<CR>")
 
+M.map('', '<S-F11>', "<cmd>:GonvimFullscreen 0<CR>")
+M.map('', '<F11>', "<cmd>:GonvimFullscreen 1<CR>")
+
 return M
