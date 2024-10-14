@@ -14,7 +14,10 @@ vim.cmd([[
 
 vim.g.gui_font_default_size = 12
 vim.g.gui_font_size = vim.g.gui_font_default_size
-vim.g.gui_font_face = "Consolas"
+-- IntoneMono Nerd Font
+-- https://www.nerdfonts.com/font-downloads
+vim.g.gui_font_face = "IntoneMono_NF"
+-- vim.g.gui_font_face = "Consolas"
 -- vim.g.gui_font_face = "ProFontWindows"
 
 RefreshGuiFont = function()
