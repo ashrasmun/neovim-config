@@ -1,3 +1,10 @@
+-- To use plugins you need to install and add to path:
+-- cmake (https://cmake.org/download)
+-- ripgrep (https://github.com/BurntSushi/ripgrep/releases)
+-- pyright (https://github.com/microsoft/pyright/releases)
+-- lua_ls (https://github.com/LuaLS/lua-language-server/releases)
+-- clangd (https://releases.llvm.org)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 print(lazypath)
 if not vim.loop.fs_stat(lazypath) then
@@ -89,23 +96,24 @@ require("lazy").setup({
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 
-    -- Adds a number of user-friendly snippets
-    'rafamadriz/friendly-snippets',
-
     -- Useful plugin to show you pending keybinds.
     { 'folke/which-key.nvim', opts = {} },
+
+    -- which-key - icons
+    'echasnovski/mini.icons',
+    'nvim-tree/nvim-web-devicons',
 })
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
     defaults = {
-    mappings = {
-        i = {
-            ['<C-u>'] = false,
-            ['<C-d>'] = "delete_buffer",
+        mappings = {
+            i = {
+                ['<C-u>'] = false,
+                ['<C-d>'] = "delete_buffer",
+            },
         },
-    },
     },
 }
 
@@ -283,7 +291,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- document existing key chains
-require('which-key').register {
+require("which-key").add({
     { "<leader>c", group = "[C]ode" },
     { "<leader>c_", hidden = true },
     { "<leader>d", group = "[D]ocument" },
@@ -298,7 +306,7 @@ require('which-key').register {
     { "<leader>s_", hidden = true },
     { "<leader>w", group = "[W]orkspace" },
     { "<leader>w_", hidden = true },
-}
+})
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
