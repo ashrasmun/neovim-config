@@ -7,19 +7,15 @@ configs.setup({
     -- First five are needed as per documentation
     -- https://github.com/nvim-treesitter/nvim-treesitter#modules
     ensure_installed = {
-        "c",
         "cpp",
         "json",
         "lua",
         "markdown",
         "perl",
         "python",
-        "query",
-        "rust",
         "toml",
         "vim",
         "vimdoc",
-        "zig",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
