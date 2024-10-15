@@ -1,6 +1,9 @@
 -- Remember to :checkhealth in order to repair stuff that needs to be addressed
 -- on each machine manually. For extended explanation please read README.md
 
+-- Verbose logging, for debugging
+-- vim.o.verbose = 5
+
 require('mappings')
 require('plugins')
 require('lsp') -- needs to be after 'plugins'

@@ -103,6 +103,17 @@ require("lazy").setup({
     -- which-key - icons
     'echasnovski/mini.icons',
     'nvim-tree/nvim-web-devicons',
+
+    -- python virtual environment selector
+    {
+        "linux-cultist/venv-selector.nvim",
+        branch = "regexp",
+        config = function()
+            require("venv-selector").setup({
+                silent = true,
+            })
+        end
+    },
 })
 
 -- [[ Configure Telescope ]]
