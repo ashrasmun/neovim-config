@@ -12,11 +12,11 @@ vim.cmd([[
 
 --== FONT SIZE ==--
 
-vim.g.gui_font_default_size = 12
+vim.g.gui_font_default_size = 14
 vim.g.gui_font_size = vim.g.gui_font_default_size
 -- IntoneMono Nerd Font
 -- https://www.nerdfonts.com/font-downloads
-vim.g.gui_font_face = "IntoneMono_NF"
+vim.g.gui_font_face = "IntoneMono_NFM_Medium"
 -- vim.g.gui_font_face = "Consolas"
 -- vim.g.gui_font_face = "ProFontWindows"
 
