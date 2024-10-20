@@ -4,6 +4,9 @@
 -- pyright (https://github.com/microsoft/pyright/releases)
 -- lua_ls (https://github.com/LuaLS/lua-language-server/releases)
 -- clangd (https://releases.llvm.org)
+-- python needs to be installed, python3.exe needs to be manually added (copied
+-- from python.exe) and PATH needs to point to it.
+-- lua, but install it through 'chocolatey'
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 print(lazypath)

@@ -16,7 +16,8 @@ vim.g.gui_font_default_size = 14
 vim.g.gui_font_size = vim.g.gui_font_default_size
 -- IntoneMono Nerd Font
 -- https://www.nerdfonts.com/font-downloads
-vim.g.gui_font_face = "IntoneMono_NFM_Medium"
+vim.g.gui_font_face = "RecMonoCasual_Nerd_Font"
+-- vim.g.gui_font_face = "IntoneMono_NFM_Medium"
 -- vim.g.gui_font_face = "Consolas"
 -- vim.g.gui_font_face = "ProFontWindows"
 
