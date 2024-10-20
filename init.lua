@@ -7,7 +7,6 @@
 require('mappings')
 require('plugins')
 require('lsp') -- needs to be after 'plugins'
-require('treesitter') -- needs to be after 'plugins'
 require('nerdtree') -- needs to be after 'plugins'
 require('completion')
 require('ginit')
